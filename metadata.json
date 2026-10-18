@@ -1,0 +1,6 @@
+{
+  "name": "KaushalSetu",
+  "description": "AI-powered, voice-first, offline-ready learning-to-livelihood platform for rural Indian students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

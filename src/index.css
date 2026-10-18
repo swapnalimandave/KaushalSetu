@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper-bg: #FAF9F4;
+  --color-surface: #FFFFFF;
+  --color-navy-primary: #0A1931;
+  --color-navy-secondary: #1A3D63;
+  --color-blue-interactive: #4A7FA7;
+  --color-blue-soft: #DCECF3;
+  --color-accent-yellow: #F4C84A;
+  --color-accent-green: #58B98C;
+  --color-accent-coral: #EF6F61;
+  --color-text-primary: #17212B;
+  --color-text-secondary: #64748B;
+  --color-border-subtle: #D9E1E5;
+  --color-status-success: #2E7D32;
+  --color-status-warning: #B86B00;
+  --color-status-error: #C62828;
+}
+
+@layer base {
+  :root {
+    --paper-bg: #FAF9F4;
+    --surface: #FFFFFF;
+    --navy-primary: #0A1931;
+    --navy-secondary: #1A3D63;
+    --blue-interactive: #4A7FA7;
+    --blue-soft: #DCECF3;
+    --accent-yellow: #F4C84A;
+    --accent-green: #58B98C;
+    --accent-coral: #EF6F61;
+    --text-primary: #17212B;
+    --text-secondary: #64748B;
+    --border-subtle: #D9E1E5;
+    --status-success: #2E7D32;
+    --status-warning: #B86B00;
+    --status-error: #C62828;
+  }
+
+  body {
+    background-color: var(--paper-bg);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Subtle notebook ruled paper background */
+.notebook-ruled-bg {
+  background-color: #FAF9F4;
+  background-image: 
+    linear-gradient(to right, rgba(239, 111, 97, 0.12) 1px, transparent 1px),
+    repeating-linear-gradient(to bottom, transparent, transparent 35px, rgba(10, 25, 49, 0.035) 35px, rgba(10, 25, 49, 0.035) 36px);
+  background-size: 100% 100%, 100% 36px;
+  background-position: 48px 0, 0 0;
+}
+
+@media (max-width: 640px) {
+  .notebook-ruled-bg {
+    background-position: 24px 0, 0 0;
+  }
+}
+
+/* Handwriting font utility for tiny annotations */
+.font-handwriting {
+  font-family: 'Kalam', cursive, sans-serif;
+}
+
+.font-devanagari {
+  font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Notebook paper tape effect */
+.masking-tape {
+  position: relative;
+}
+
+.masking-tape::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 72px;
+  height: 18px;
+  background-color: rgba(244, 200, 74, 0.45);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-left: 2px dashed rgba(244, 200, 74, 0.6);
+  border-right: 2px dashed rgba(244, 200, 74, 0.6);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Slightly imperfect hand-drawn border effect */
+.hand-border {
+  border: 1.5px solid #D9E1E5;
+  box-shadow: 2px 2px 0px rgba(10, 25, 49, 0.04);
+}
+
+.hand-border-dark {
+  border: 1.5px solid #0A1931;
+  box-shadow: 3px 3px 0px #0A1931;
+}
+
+.hand-border-yellow {
+  border: 1.5px solid #0A1931;
+  box-shadow: 3px 3px 0px #F4C84A;
+}
+
+/* Touch targets and accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
